@@ -6,7 +6,7 @@ import org.apache.http.client.methods.CloseableHttpResponse
 /**
   * Created by Freddie on 06/03/2016.
   */
-case class FireflyUserResponse(r: CloseableHttpResponse, user:FireflyUser) extends FireflyResponse(r) {
+case class FireflyUserResponse(r: CloseableHttpResponse, user:FireflyUser, preReadText:Option[String] = None) extends FireflyResponse(r, preReadText) {
 
 
 

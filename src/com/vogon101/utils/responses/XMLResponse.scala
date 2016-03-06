@@ -8,7 +8,7 @@ import scala.xml.{Elem, XML}
 /**
   * Created by Freddie on 05/03/2016.
   */
-class XMLResponse(r: CloseableHttpResponse) extends HTTPResponse(r){
+class XMLResponse(r: CloseableHttpResponse, preReadText:Option[String] = None) extends HTTPResponse(r, preReadText){
 
   lazy val bodyAsXML:Elem = XML.loadString(bodyAsString)
 

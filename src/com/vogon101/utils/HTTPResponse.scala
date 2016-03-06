@@ -6,9 +6,9 @@ import org.apache.http.util.EntityUtils
 /**
   * Created by Freddie on 05/03/2016.
   */
-class HTTPResponse(val response: CloseableHttpResponse) {
+class HTTPResponse(val response: CloseableHttpResponse, preReadText:Option[String] = None) {
 
-  lazy val bodyAsString = EntityUtils.toString(response.getEntity)
+  lazy val bodyAsString = if (preReadText.isDefined) preReadText.get else EntityUtils.toString(response.getEntity)
 
   def cookies:Map[String,String] = {
     var c = Map[String,String]()

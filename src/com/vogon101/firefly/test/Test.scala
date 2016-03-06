@@ -1,7 +1,7 @@
 package com.vogon101.firefly.test
 
 import com.vogon101.firefly.data.{FireflyUser, FireflyLogin}
-import com.vogon101.firefly.request.{FireflyLoginRequest, FireflyTasksRequest}
+import com.vogon101.firefly.request.{FireflyMarkAsDoneRequest, FireflyLoginRequest, FireflyTasksRequest}
 
 /**
   * Created by Freddie on 05/03/2016.
@@ -32,4 +32,12 @@ object Test extends App{
 
   tasks.tasks.foreach(println)
 
+  val madResponse = new FireflyMarkAsDoneRequest(
+    SITE,
+    tasks.tasks.filter(_.id == 41832).head,
+    user
+  ).execute()
+  println(madResponse)
+  println(madResponse.bodyAsString)
+  println(madResponse.success)
 }

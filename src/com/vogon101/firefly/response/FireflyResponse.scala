@@ -6,7 +6,7 @@ import org.apache.http.client.methods.CloseableHttpResponse
 /**
   * Created by Freddie on 06/03/2016.
   */
-class FireflyResponse(r:CloseableHttpResponse) extends XMLResponse(r) {
+class FireflyResponse(r:CloseableHttpResponse, preReadText:Option[String] = None) extends XMLResponse(r, preReadText) {
 
 }
 
