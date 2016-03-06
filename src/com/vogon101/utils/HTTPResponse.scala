@@ -8,7 +8,7 @@ import org.apache.http.util.EntityUtils
   */
 class HTTPResponse(val response: CloseableHttpResponse) {
 
-  val bodyAsString = EntityUtils.toString(response.getEntity)
+  lazy val bodyAsString = EntityUtils.toString(response.getEntity)
 
   def cookies:Map[String,String] = {
     var c = Map[String,String]()

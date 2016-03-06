@@ -21,5 +21,6 @@
         <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" type="SOURCES" />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="scala-sdk-2.11.1" level="application" />
   </component>
 </module>
